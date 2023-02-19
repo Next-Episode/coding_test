@@ -1,0 +1,21 @@
+import java.io.*;
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) throws Exception {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        int N = Integer.parseInt(br.readLine());
+        for(int i=1; i<=N*N; i++) {
+        	if(i%N==0) {
+        		bw.write("*" + "\n");
+        	} else if((i/N)>0 && i>=(((i/N)+1)*N-(i/N))) {
+        		bw.write("*");
+        	} else {
+        		bw.write(" ");
+        	}
+        }
+        bw.flush();
+        bw.close();
+    } 
+}
